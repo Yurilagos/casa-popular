@@ -1,0 +1,22 @@
+spring:
+ mvc:
+   pathmatch:
+    matching-strategy: ant-path-matcher
+ servlet:
+  encoding:
+   enable: true
+   charset: UTF-8
+ jpa:
+  show-sql: true
+  hibernate:
+   ddl-auto: create
+ data:
+    mongodb:
+      database: casa-popular
+      username: admin
+      password: admin
+      authentication-database: admin
+server:
+  servlet:
+    context-path: /dginx
+  port: 8080
