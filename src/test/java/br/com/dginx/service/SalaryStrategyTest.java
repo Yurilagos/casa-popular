@@ -32,30 +32,30 @@ public class SalaryStrategyTest {
     @DisplayName("should calculate three salary points successful")
     @Test
     void shouldCalculateSalaryThreePointsSuccessful() {
-        var famillyApply = dataMock.getFamillyApplyPointsTest();
+        var familyApply = dataMock.getFamilyApplyPointsTest();
         var applicant = dataMock.getPerson();
         var spouse = dataMock.getPersonSpouse();
         when(personRepository.findById(anyString())).thenReturn(Optional.of(applicant), Optional.of(spouse));
 
-        salaryStrategy.executeStrategy(famillyApply);
+        salaryStrategy.executeStrategy(familyApply);
 
-        assertEquals(famillyApply.getPoints(), Utils.INT_3);
-        assertEquals(famillyApply.getTiebreaker(), (applicant.getSalary() + spouse.getSalary())/2);
+        assertEquals(familyApply.getPoints(), Utils.INT_3);
+        assertEquals(familyApply.getTiebreaker(), (applicant.getSalary() + spouse.getSalary()) / 2);
     }
 
     @SuppressWarnings("unchecked")
     @DisplayName("should calculate five salary points successful")
     @Test
     void shouldCalculateSalaryFivePointsSuccessful() {
-        var famillyApply = dataMock.getFamillyApplyPointsTest2();
+        var familyApply = dataMock.getFamilyApplyPointsTest2();
         var applicant = dataMock.getPersonWith200Salary();
         var spouse = dataMock.getPersonSpouse();
         when(personRepository.findById(anyString())).thenReturn(Optional.of(applicant), Optional.of(spouse));
 
-        salaryStrategy.executeStrategy(famillyApply);
+        salaryStrategy.executeStrategy(familyApply);
 
-        assertEquals(famillyApply.getPoints(), Utils.INT_5);
-        assertEquals(famillyApply.getTiebreaker(), (applicant.getSalary() + spouse.getSalary())/2);
+        assertEquals(familyApply.getPoints(), Utils.INT_5);
+        assertEquals(familyApply.getTiebreaker(), (applicant.getSalary() + spouse.getSalary()) / 2);
     }
 
 }

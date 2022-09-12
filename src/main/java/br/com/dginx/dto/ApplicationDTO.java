@@ -12,8 +12,8 @@ import org.springframework.hateoas.RepresentationModel;
 @Builder
 public class ApplicationDTO extends RepresentationModel<ApplicationDTO> {
 
-    private String famillyApplyId;
-    private String applycantFullName;
+    private String familyApplyId;
+    private String applicantFullName;
     private Integer points;
     @JsonIgnore
     private Double tiebreaker;

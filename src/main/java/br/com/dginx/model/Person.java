@@ -26,4 +26,12 @@ public class Person {
 	private Double salary;
 	private String fullName;
 
+
+	public Double getSalary(){
+		if(salary == null){
+			salary = 0d;
+		}
+		return salary;
+	}
+
 }

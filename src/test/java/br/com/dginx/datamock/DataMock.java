@@ -1,8 +1,8 @@
 package br.com.dginx.datamock;
 
-import br.com.dginx.dto.FamillyApplyDTO;
+import br.com.dginx.dto.FamilyApplyDTO;
 import br.com.dginx.dto.PersonDTO;
-import br.com.dginx.model.FamillyApply;
+import br.com.dginx.model.FamilyApply;
 import br.com.dginx.model.Person;
 import br.com.dginx.util.Utils;
 
@@ -31,16 +31,17 @@ public class DataMock {
                 .id(UUID.randomUUID().toString())
                 .fullName("Joao Silva")
                 .birthDate(LocalDate.now())
-                .cpf(123456789l)
+                .cpf(123456789L)
                 .salary(500d)
                 .build();
     }
+
     public Person getPersonWith200Salary() {
         return Person.builder()
                 .id(UUID.randomUUID().toString())
                 .fullName("Joao Silva")
                 .birthDate(LocalDate.now())
-                .cpf(123456789l)
+                .cpf(123456789L)
                 .salary(200d)
                 .build();
     }
@@ -50,7 +51,7 @@ public class DataMock {
                 .id(UUID.randomUUID().toString())
                 .fullName("Joao Silva")
                 .birthDate(LocalDate.now())
-                .cpf(123456789l)
+                .cpf(123456789L)
                 .salary(500d)
                 .build();
     }
@@ -60,7 +61,7 @@ public class DataMock {
                 .id(UUID.randomUUID().toString())
                 .fullName("Joao da Silva")
                 .birthDate(LocalDate.now())
-                .cpf(123456789l)
+                .cpf(123456789L)
                 .salary(400d)
                 .build();
     }
@@ -70,7 +71,7 @@ public class DataMock {
                 .id(UUID.randomUUID().toString())
                 .fullName("Joao da Silva")
                 .birthDate(LocalDate.now())
-                .cpf(123456789l)
+                .cpf(123456789L)
                 .salary(400d)
                 .build();
     }
@@ -80,7 +81,7 @@ public class DataMock {
                 .id(UUID.randomUUID().toString())
                 .fullName("Joao Silva")
                 .birthDate(LocalDate.now())
-                .cpf(123456789l)
+                .cpf(123456789L)
                 .salary(500d)
                 .build();
     }
@@ -90,14 +91,14 @@ public class DataMock {
                 .id(UUID.randomUUID().toString())
                 .fullName("Maria Silva")
                 .birthDate(LocalDate.now())
-                .cpf(123456782l)
+                .cpf(123456782L)
                 .salary(500d)
                 .build();
     }
 
 
-    public FamillyApply getFamillyApply() {
-        return FamillyApply.builder()
+    public FamilyApply getFamilyApply() {
+        return FamilyApply.builder()
                 .id(UUID.randomUUID().toString())
                 .applicantId(UUID.randomUUID().toString())
                 .spouseId(UUID.randomUUID().toString())
@@ -106,24 +107,24 @@ public class DataMock {
                 .build();
     }
 
-    public FamillyApply getFamillyApplyPointsTest() {
-        return FamillyApply.builder()
+    public FamilyApply getFamilyApplyPointsTest() {
+        return FamilyApply.builder()
                 .id(UUID.randomUUID().toString())
                 .applicantId(UUID.randomUUID().toString())
                 .spouseId(UUID.randomUUID().toString())
                 .build();
     }
 
-    public FamillyApply getFamillyApplyPointsTest2() {
-        return FamillyApply.builder()
+    public FamilyApply getFamilyApplyPointsTest2() {
+        return FamilyApply.builder()
                 .id(UUID.randomUUID().toString())
                 .applicantId(UUID.randomUUID().toString())
                 .spouseId(UUID.randomUUID().toString())
                 .build();
     }
 
-    public FamillyApply getFamillyApplyPointsThreeDependentsTest() {
-        return FamillyApply.builder()
+    public FamilyApply getFamilyApplyPointsThreeDependentsTest() {
+        return FamilyApply.builder()
                 .id(UUID.randomUUID().toString())
                 .applicantId(UUID.randomUUID().toString())
                 .spouseId(UUID.randomUUID().toString())
@@ -135,8 +136,8 @@ public class DataMock {
     }
 
 
-    public FamillyApply getFamillyApplyPointsTwoDependentsTest() {
-        return FamillyApply.builder()
+    public FamilyApply getFamilyApplyPointsTwoDependentsTest() {
+        return FamilyApply.builder()
                 .id(UUID.randomUUID().toString())
                 .applicantId(UUID.randomUUID().toString())
                 .spouseId(UUID.randomUUID().toString())
@@ -146,8 +147,8 @@ public class DataMock {
                 .build();
     }
 
-    public FamillyApplyDTO getFamillyApplyDTO() {
-        return FamillyApplyDTO.builder()
+    public FamilyApplyDTO getFamilyApplyDTO() {
+        return FamilyApplyDTO.builder()
                 .id(UUID.randomUUID().toString())
                 .applicantId(UUID.randomUUID().toString())
                 .spouseId(UUID.randomUUID().toString())
@@ -155,8 +156,9 @@ public class DataMock {
                 .tiebreaker(500d)
                 .build();
     }
-    public FamillyApplyDTO getFamillyApplyWithDependentsDTO() {
-        return FamillyApplyDTO.builder()
+
+    public FamilyApplyDTO getFamilyApplyWithDependentsDTO() {
+        return FamilyApplyDTO.builder()
                 .id(UUID.randomUUID().toString())
                 .applicantId(UUID.randomUUID().toString())
                 .spouseId(UUID.randomUUID().toString())
@@ -173,9 +175,10 @@ public class DataMock {
                 .id(UUID.randomUUID().toString())
                 .fullName("Gabriel Silva")
                 .birthDate(LocalDate.now())
-                .cpf(123456784l)
+                .cpf(123456784L)
                 .build();
     }
+
     public Person getDependent2() {
         return Person.builder()
                 .id(UUID.randomUUID().toString())
@@ -184,6 +187,7 @@ public class DataMock {
                 .cpf(123456783l)
                 .build();
     }
+
     public Person getDependent3() {
         return Person.builder()
                 .id(UUID.randomUUID().toString())
@@ -192,7 +196,6 @@ public class DataMock {
                 .cpf(123456782l)
                 .build();
     }
-
 
 
 }

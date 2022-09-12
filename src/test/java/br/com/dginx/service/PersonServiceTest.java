@@ -36,7 +36,7 @@ public class PersonServiceTest {
 	@Mock
 	private PersonRepository personRepository;
 	@Mock
-	private FamillyApplyService famillyApplyService;
+	private FamilyApplyService familyApplyService;
 	@Mock
 	private MapperUtil mapperUtil;
 
@@ -74,7 +74,7 @@ public class PersonServiceTest {
 			personService.create(personDTO);
 		});
 
-		assertThat(exception.getMessage()).isEqualToIgnoringCase("Person already exist");
+		assertThat(exception.getMessage()).isEqualToIgnoringCase("Person already exist, CPF: "+personDTO.getCpf());
 		verify(personRepository, atLeastOnce()).findByCpf(any(Long.class));
 	}
 
@@ -89,7 +89,7 @@ public class PersonServiceTest {
 		when(personRepository.findById(anyString())).thenReturn(Optional.of(person));
 		when(personRepository.save(any(Person.class))).thenReturn(updatedPerson);
 		when(mapperUtil.convertTo(updatedPerson, PersonDTO.class)).thenReturn(updatedPersonDTO);
-		doNothing().when(famillyApplyService).updateFamillyApplyIfFindPerson(anyString());
+		doNothing().when(familyApplyService).updateFamilyApplyIfFindPerson(anyString());
 
 		PersonDTO result = personService.update(personDTO.getId(), updatedPersonDTO);
 

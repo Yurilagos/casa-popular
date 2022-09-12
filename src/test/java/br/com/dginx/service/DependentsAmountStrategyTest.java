@@ -31,29 +31,29 @@ public class DependentsAmountStrategyTest {
     @DisplayName("should calculate DependentsAmount three points successful")
     @Test
     void shouldCalculateDependentsAmountThreePointsSuccessful() {
-        var famillyApply = dataMock.getFamillyApplyPointsThreeDependentsTest();
+        var familyApply = dataMock.getFamilyApplyPointsThreeDependentsTest();
         when(personRepository.findById(anyString())).thenReturn(
                 Optional.of(dataMock.getDependent1()),
                 Optional.of(dataMock.getDependent2()),
                 Optional.of(dataMock.getDependent3()));
 
-        dependentsAmountStrategy.executeStrategy(famillyApply);
+        dependentsAmountStrategy.executeStrategy(familyApply);
 
-        assertEquals(famillyApply.getPoints(), Utils.INT_3);
+        assertEquals(familyApply.getPoints(), Utils.INT_3);
     }
 
     @SuppressWarnings("unchecked")
     @DisplayName("should calculate five salary points successful")
     @Test
     void shouldCalculateSalaryFivePointsSuccessful() {
-        var famillyApply = dataMock.getFamillyApplyPointsTwoDependentsTest();
+        var familyApply = dataMock.getFamilyApplyPointsTwoDependentsTest();
         when(personRepository.findById(anyString())).thenReturn(
                 Optional.of(dataMock.getDependent1()),
                 Optional.of(dataMock.getDependent2()));
 
-        dependentsAmountStrategy.executeStrategy(famillyApply);
+        dependentsAmountStrategy.executeStrategy(familyApply);
 
-        assertEquals(famillyApply.getPoints(), Utils.INT_2);
+        assertEquals(familyApply.getPoints(), Utils.INT_2);
     }
 
 }

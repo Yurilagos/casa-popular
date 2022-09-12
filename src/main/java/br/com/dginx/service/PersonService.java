@@ -18,13 +18,13 @@ public class PersonService {
 
     private final PersonRepository personRepository;
     private final MapperUtil mapperUtil;
-    private final FamillyApplyService famillyApplyService;
+    private final FamilyApplyService familyApplyService;
 
     public PersonDTO create(PersonDTO dto) {
 
         Optional<Person> findPerson = personRepository.findByCpf(dto.getCpf());
         if (findPerson.isPresent()) {
-            throw new BusinessException("Person already exist");
+            throw new BusinessException("Person already exist, CPF: "+dto.getCpf());
         }
         dto.setId(UUID.randomUUID().toString());
         Person save = personRepository.save(mapperUtil.convertTo(dto, Person.class));
@@ -41,7 +41,7 @@ public class PersonService {
         findPerson.setSalary(dto.getSalary());
 
         PersonDTO updatedPersonDTO = mapperUtil.convertTo(personRepository.save(findPerson), PersonDTO.class);
-        famillyApplyService.updateFamillyApplyIfFindPerson(updatedPersonDTO.getId());
+        familyApplyService.updateFamilyApplyIfFindPerson(updatedPersonDTO.getId());
         return updatedPersonDTO;
     }
 
