@@ -24,4 +24,4 @@
     
   * Inicialização de dados 
     - Para inicializar alguns dados chamar o controlador Init
-    - curl -X GET "http://localhost:8080/dginx/familyApply" -H "accept: */*"
+    - curl -X GET "http://localhost:8080/dginx/init" -H "accept: */*"
